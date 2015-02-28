@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: "visitor#home"
   get 'visitor/home'
   get 'visitor/about'
+  get 'visitor/contacts'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
