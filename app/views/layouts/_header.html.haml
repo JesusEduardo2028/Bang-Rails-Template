@@ -1,21 +1,24 @@
 %header
-  .container
-    .masthead
-      %h3.text-muted Project name
-      .text-right
-        =link_to "Sign in"
-        =link_to "Log in"
-      %nav
-        %ul.nav.nav-justified
-          %li
-            =link_to "Home", home_path
-          %li
-            =link_to "About", about_path
-          %li
-            =link_to "Contacts", contacts_path
-          %li
-            %a{:href => "#"} link
-          %li
-            %a{:href => "#"} link
-          %li
-            %a{:href => "#"} link
+  .masthead
+    %h3.text-muted Gold App
+    .text-right
+      -if user_signed_in?
+        ="Logged as #{current_user.email}"
+        =link_to "Log out" , destroy_user_session_path, method: :delete
+      -else
+        =link_to "Sign in" , new_user_registration_path
+        =link_to "Log in" , new_user_session_path
+    %nav
+      %ul.nav.nav-justified
+        %li
+          =link_to "Home", home_path
+        %li
+          =link_to "About", about_path
+        %li
+          =link_to "Contacts", contacts_path
+        %li
+          %a{:href => "#"} link
+        %li
+          %a{:href => "#"} link
+        %li
+          %a{:href => "#"} link
