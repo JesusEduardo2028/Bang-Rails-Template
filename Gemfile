@@ -72,3 +72,5 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
+
+gem "bootstrap_flash_messages", "~> 1.0.0"
